@@ -1,0 +1,26 @@
+<head>
+  <title>Student Behavior</title>
+</head>
+
+<body>
+  <select name="section">
+    <option value=0>Choose a Class</option>
+    <option value=3>Period 3</option>
+    <option value=4>Period 4</option>    
+  </select>
+  <h1>Students</h1>
+  {{#if currentUser}}
+  <form class="add_student">
+    <input type="text" name="student_name" placeholder="Student Name"/>
+  </form>
+  {{/if}}
+  <ul>
+    {{>studentListing}}  
+  </ul>
+{{>loginButtons}}
+</body>
+<template name='studentListing'>
+  {{#each students}}
+    <li class="studentItem {{selectedClass}}">{{name}}:&nbsp;{{score}}</li>
+  {{/each}}
+</template>
