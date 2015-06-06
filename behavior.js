@@ -26,7 +26,7 @@ if (Meteor.isClient) {
       });	    
   Template.studentListing.helpers({
 	  'students': function(){
-	      return StudentList.find({period: parseInt(Session.get('selectedPeriod')),teacher: Meteor.userId()});    
+	      return StudentList.find({period: parseInt(Session.get('selectedPeriod')),teacher: Meteor.userId()},{sort: {name:1}});    
 	  },
 	  'selectedClass': function(){
 	      if (this._id == Session.get('selectedStudent')){

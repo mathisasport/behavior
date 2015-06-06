@@ -1,7 +1,24 @@
 /* CSS declarations go here */
-.studentItem {
-font-size: 1.5em;
+
+li {
+    color: darkblue;
+    border-width: .1em;
+    border-style: solid;
+    border-color: mediumblue;
+    border-radius: .5em;
+    width: 14em;
+    padding-left: .25em;
+    margin-bottom: .25em;
 }
+
+ul {
+    list-style-type: none;
+}
+
+.studentItem {
+    font-size: 1.5em;
+}
+
 .selected {
-background-color: lightblue;
+    background-color: lightblue;
 }
