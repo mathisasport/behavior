@@ -39,6 +39,7 @@ if (Meteor.isClient) {
 		    Session.set('selectedBehavior',0);	
 		}    
 		Session.set('selectedStudent',false);
+		$("select option[value='0']").attr('selected','selected');
 	    }	
 	
 
