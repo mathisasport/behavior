@@ -8,8 +8,9 @@ roadmap.
 <p>0.4 pull down integrated into individual li</p>
 <p>0.5 CRUD on-screen for classlist</p>
 <p>0.6 display of behaviors, classroom average, scoring computed from behavior_events, score reset from start of day</p>
-<p>0.7 classroom visual layout</p>
-<p>0.8 individual student feedback</p>
+<p>0.7 individual student feedback</p>
+<p>0.8 classroom visual layout</p>
 <p>0.9 drag and drop classlist load.</p>
 <p>1.0 letters to parent, guidance counselor, student</p>
 <p>1.1 managing multiple teachers</p>
+<p>additional ideas: teacher loads own set of behaviors</p>
