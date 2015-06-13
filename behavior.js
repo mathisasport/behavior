@@ -36,13 +36,13 @@ if (Meteor.isClient) {
 			action: Session.get('selectedBehavior')   
 		    });
 		    Session.set('addBehavior',false);
-		    Session.set('selectedBehavior','None');	
 		}    
 		Session.set('selectedStudent',false);
-// here's where i need to deselect the current selection
-// var string = 'select option[value=' + Session.get(selectedBehavior) + ']';   
-// $(string).removeAttr('selected');
+// deselect the current selection (if you don't, mobile safari will show two items selected)
+		var final_string = "select option[value='" + Session.get('selectedBehavior') + "']";
+		$(final_string).removeAttr('selected');
 		$("select option[value='None']").attr('selected','selected');
+		Session.set('selectedBehavior','None');	
 	    }	
 	
 
