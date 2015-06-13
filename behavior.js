@@ -26,9 +26,10 @@ if (Meteor.isClient) {
 		Session.set("selectedPeriod",parseInt(event.target.value));	
 	    },
 	    "change select[name='behaviors']": function(event){
-		Session.set("selectedBehavior",parseInt(event.target.value));
+		Session.set("selectedBehavior",event.target.value);
+		console.log(Session.get('selectedBehavior'));
 		if(Session.get('addBehavior') && 
-		   Session.get('selectedBehavior')!=1)
+		   Session.get('selectedBehavior')!="Cancel")
 		{
 		    BehaviorEvents.insert({    
 			student_id: Session.get('selectedStudent'), 
@@ -36,10 +37,14 @@ if (Meteor.isClient) {
 			action: Session.get('selectedBehavior')   
 		    });
 		    Session.set('addBehavior',false);
-		    Session.set('selectedBehavior',0);	
+		    Session.set('selectedBehavior','None');	
 		}    
 		Session.set('selectedStudent',false);
-		$("select option[value='0']").attr('selected','selected');
+// here's where i need to deselect the current selection
+// var string = 'select option[value=' + Session.get(selectedBehavior) + ']';   
+// $(string).attr('selected','');  or even better, based on SO 
+
+		$("select option[value='None']").attr('selected','selected');
 	    }	
 	
 
