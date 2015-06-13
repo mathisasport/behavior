@@ -4,7 +4,7 @@ BehaviorEvents = new Mongo.Collection('behavior_events');
 if (Meteor.isClient) {
   Session.setDefault('selectedPeriod',0);
   Session.setDefault('selectedStudent',false);
-  Session.setDefault('selectedBehavior',0);  
+  Session.setDefault('selectedBehavior','None');  
   Session.setDefault('addBehavior',false);  
 
   Template.body.events({
@@ -27,7 +27,6 @@ if (Meteor.isClient) {
 	    },
 	    "change select[name='behaviors']": function(event){
 		Session.set("selectedBehavior",event.target.value);
-		console.log(Session.get('selectedBehavior'));
 		if(Session.get('addBehavior') && 
 		   Session.get('selectedBehavior')!="Cancel")
 		{
@@ -42,8 +41,7 @@ if (Meteor.isClient) {
 		Session.set('selectedStudent',false);
 // here's where i need to deselect the current selection
 // var string = 'select option[value=' + Session.get(selectedBehavior) + ']';   
-// $(string).attr('selected','');  or even better, based on SO 
-
+// $(string).removeAttr('selected');
 		$("select option[value='None']").attr('selected','selected');
 	    }	
 	
