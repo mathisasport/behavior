@@ -1,11 +1,13 @@
 StudentList = new Mongo.Collection('students');
 BehaviorEvents = new Mongo.Collection('behavior_events');
+var new_score;
 
 if (Meteor.isClient) {
   Session.setDefault('selectedPeriod',0);
   Session.setDefault('selectedStudent',false);
   Session.setDefault('selectedBehavior','None');  
   Session.setDefault('addBehavior',false);  
+//  var behaviors_dropdown = $('[name=behaviors]').detach();  
 
   Template.body.events({
 	    "submit .add_student": function (event) {
@@ -25,6 +27,7 @@ if (Meteor.isClient) {
 	    "change select[name='section']": function(event){
 		Session.set("selectedPeriod",parseInt(event.target.value));	
 	    },
+// note this has no effect unless the user has already clicked on a student.
 	    "change select[name='behaviors']": function(event){
 		Session.set("selectedBehavior",event.target.value);
 		if(Session.get('addBehavior') && 
@@ -35,7 +38,9 @@ if (Meteor.isClient) {
 			time: new Date(), 
 			action: Session.get('selectedBehavior')   
 		    });
+		    StudentList.update(Session.get('selectedStudent'), {$set: {score: new_score}});
 		    Session.set('addBehavior',false);
+
 		}    
 		Session.set('selectedStudent',false);
 // deselect the current selection (if you don't, mobile safari will show two items selected)
@@ -43,8 +48,8 @@ if (Meteor.isClient) {
 		$(final_string).removeAttr('selected');
 		$("select option[value='None']").attr('selected','selected');
 		Session.set('selectedBehavior','None');	
+		$('span').detach();
 	    }	
-	
 
       });	    
   Template.studentListing.helpers({
@@ -59,11 +64,13 @@ if (Meteor.isClient) {
       });			  
 
   Template.studentListing.events({
-	  'click .studentItem': function(){
+	  'click .studentItem': function(event){
 	      Session.set('selectedStudent',this._id);
-	      var new_score = this.score >= 10 ? this.score - 10: 0;
-	      StudentList.update(this._id, {$set: {score: new_score}});
+	      new_score = this.score >= 10 ? this.score - 10: 0;
 	      Session.set('addBehavior',true);
+// the user is now able to change the score and record a behavior, 
+// if they complete the action by selecting something in the behaviors dropdown.
+	      $(event.target).append("<span>here I am</span>");
 	  }
       });
 }

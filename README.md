@@ -13,4 +13,5 @@ roadmap.
 <p>0.9 drag and drop classlist load.</p>
 <p>1.0 letters to parent, guidance counselor, student</p>
 <p>1.1 managing multiple teachers</p>
-<p>additional ideas: teacher loads own set of behaviors</p>
+below here is just my workspace. additional ideas: teacher loads own set of behaviors
+for 0.4, what if i attach, detach, and move the pull down from one item to the next?
