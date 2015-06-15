@@ -7,7 +7,9 @@ if (Meteor.isClient) {
   Session.setDefault('selectedStudent',false);
   Session.setDefault('selectedBehavior','None');  
   Session.setDefault('addBehavior',false);  
-//  var behaviors_dropdown = $('[name=behaviors]').detach();  
+
+//  var behaviors_dropdown = $("#behaviors1");  
+//  $('body').append(behaviors_dropdown);
 
   Template.body.events({
 	    "submit .add_student": function (event) {
@@ -48,7 +50,7 @@ if (Meteor.isClient) {
 		$(final_string).removeAttr('selected');
 		$("select option[value='None']").attr('selected','selected');
 		Session.set('selectedBehavior','None');	
-		$('span').detach();
+		$('#active').detach();
 	    }	
 
       });	    
@@ -70,7 +72,7 @@ if (Meteor.isClient) {
 	      Session.set('addBehavior',true);
 // the user is now able to change the score and record a behavior, 
 // if they complete the action by selecting something in the behaviors dropdown.
-	      $(event.target).append("<span>here I am</span>");
+	      $(event.target).append("<select id='active' name='behaviors'><option value='None'>Identify the behavior</option><option value='Cancel'>Cancel</option><option value='disturb others'>Disturb others</option><option value='derogatory language'>Derogatory language</option><option value='doing no work'>Doing no work</option><option value='dress code'>Dress code</option><option value='no pen/pencil/calc'>No pen/pencil/calc</option><option value='eating food in class'>Food</option><option value='damage property'>Damage property</option><option value='dirty work area'>Dirty workspace</option><option value='cell phone out'>Cell phone</option><option value='other'>Other</option></select>");
 	  }
       });
 }
