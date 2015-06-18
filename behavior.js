@@ -72,7 +72,7 @@ if (Meteor.isClient) {
 	      Session.set('addBehavior',true);
 // the user is now able to change the score and record a behavior, 
 // if they complete the action by selecting something in the behaviors dropdown.
-	      $(event.target).append("<select id='active' name='behaviors'><option value='None'>Identify the behavior</option><option value='Cancel'>Cancel</option><option value='disturb others'>Disturb others</option><option value='derogatory language'>Derogatory language</option><option value='doing no work'>Doing no work</option><option value='dress code'>Dress code</option><option value='no pen/pencil/calc'>No pen/pencil/calc</option><option value='eating food in class'>Food</option><option value='damage property'>Damage property</option><option value='dirty work area'>Dirty workspace</option><option value='cell phone out'>Cell phone</option><option value='other'>Other</option></select>");
+	      $(event.target).append("<select id='active' name='behaviors'><option value='None'>Identify the behavior</option><option value='Cancel'>Cancel</option><option value='disturb others'>Disturb others</option><option value='derogatory language'>Derogatory language</option><option value='doing no work'>Doing no work</option><option value='dress code'>Dress code</option><option value='no pen/pencil/calc'>No pen/pencil/calc</option><option value='eating food in class'>Food</option><option value='damage property'>Damage property</option><option value='dirty work area'>Dirty workspace</option><option value='cell phone out'>Cell phone</option><option value='Cheating'>Cheating</option><option value='Disrespecting authority'>Disrespect authority</option><option value='Other'>Other</option></select>");
 	  }
       });
 }
