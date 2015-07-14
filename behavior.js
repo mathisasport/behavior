@@ -72,6 +72,13 @@ if (Meteor.isClient) {
 	      Session.set('addBehavior',true);
 // the user is now able to change the score and record a behavior, 
 // if they complete the action by selecting something in the behaviors dropdown.
+// we wish to also add a set of positive behaviors. 
+// practice honesty (truthtelling includes not being silent when you know something relevant)
+// take responsibility for your actions
+// show initiative (don't wait for someone else.  you are in charge of your education.)
+// help others succeed
+// persist in difficult things
+
 	      $(event.target).append("<select id='active' name='behaviors'><option value='None'>Identify the behavior</option><option value='Cancel'>Cancel</option><option value='disturb others'>Disturb others</option><option value='derogatory language'>Derogatory language</option><option value='doing no work'>Doing no work</option><option value='dress code'>Dress code</option><option value='no pen/pencil/calc'>No pen/pencil/calc</option><option value='eating food in class'>Food</option><option value='damage property'>Damage property</option><option value='dirty work area'>Dirty workspace</option><option value='cell phone out'>Cell phone</option><option value='Cheating'>Cheating</option><option value='Disrespecting authority'>Disrespect authority</option><option value='Other'>Other</option></select>");
 	  }
       });
