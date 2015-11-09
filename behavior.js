@@ -79,12 +79,7 @@ if (Meteor.isClient) {
 // help others succeed
 // persist in difficult things
 
-	      $(event.target).append("<select id='active' name='behaviors'><option value='None'>Identify the behavior</option><option value='Cancel'>Cancel</option>
-<option value='100'>check-plus</option>
-<option value='85'>check</option>
-<option value='70'>check-minus</option>
-<option value='0'>0</option>
-<option value='disturb others'>Disturb others</option><option value='derogatory language'>Derogatory language</option><option value='doing no work'>Doing no work</option><option value='dress code'>Dress code</option><option value='no pen/pencil/calc'>No pen/pencil/calc</option><option value='eating food in class'>Food</option><option value='damage property'>Damage property</option><option value='dirty work area'>Dirty workspace</option><option value='cell phone out'>Cell phone</option><option value='Cheating'>Cheating</option><option value='Disrespecting authority'>Disrespect authority</option><option value='Other'>Other</option></select>");
+	      $(event.target).append("<select id='active' name='behaviors'><option value='None'>Identify the behavior</option><option value='Cancel'>Cancel</option><option value='100'>check-plus</option><option value='85'>check</option><option value='70'>check-minus</option><option value='0'>0</option><option value='disturb others'>Disturb others</option><option value='derogatory language'>Derogatory language</option><option value='doing no work'>Doing no work</option><option value='dress code'>Dress code</option><option value='no pen/pencil/calc'>No pen/pencil/calc</option><option value='eating food in class'>Food</option><option value='damage property'>Damage property</option><option value='dirty work area'>Dirty workspace</option><option value='cell phone out'>Cell phone</option><option value='Cheating'>Cheating</option><option value='Disrespecting authority'>Disrespect authority</option><option value='Other'>Other</option></select>");
 	  }
       });
 }
