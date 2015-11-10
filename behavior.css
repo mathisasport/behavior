@@ -18,6 +18,9 @@ ul {
 .studentItem {
     font-size: 1.5em;
 }
+select {
+    font-size: 1.2em;
+}
 
 .selected {
     background-color: lightblue;
